@@ -292,6 +292,7 @@ section.portfolio > h2 {
   font-size: 34px;
   line-height: 1.2;
   font-weight: 600;
+  margin-bottom: 30px;
 }
 section.skills > ol {
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
@@ -359,38 +360,34 @@ section.portfolio > nav > .bar {
 }
 section.portfolio {
   text-align: center;
-}
-section.portfolio > nav > .bar .bar-inner {
-  height: 100%;
-  background: #0a5598;
-  width: 10%;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-section.portfolio > nav > .bar.state-1 .bar-inner {
-  margin-left: 0;
-  width: 50px;
-}
-section.portfolio > nav > .bar.state-2 .bar-inner {
-  margin-left: 65px;
-  width: 50px;
-}
-section.portfolio > nav > .bar.state-3 .bar-inner {
-  margin-left: 140px;
-  width: 96px;
-}
-section.portfolio .works {
+  margin-bottom: 300px;
   position: relative;
-  margin-bottom: 100px;
-  line-height: 0;
+  max-width: 840px;
 }
 
-section.portfolio .works .big,
-section.portfolio .works .small {
-  position: absolute;
+
+section.portfolio  .swiper-container {
+  width: 819px;
+  height: 460px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
-section.portfolio .works .big:hover,
-section.portfolio .works .small:hover {
-  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s;/*过渡*/
+section.portfolio .swiper-button-prev{
+  background-color: white;
+  width: 64px;
+  height: 64px;
+  right: 100%;
+  left: auto;
+  border-radius: 50%;
+  margin-top:0px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+section.portfolio .swiper-button-next{
+  background-color: white;
+  width: 64px;
+  height: 64px;
+  left: 100%;
+  right: auto;
+  border-radius: 50%;
+  margin-top:0px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }

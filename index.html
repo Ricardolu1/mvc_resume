@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./main.css" />
+   
     <script src="//at.alicdn.com/t/font_1261257_ewtw0vajrn.js"></script>
-    <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+    <script src="./tweenjs.min.js"></script>
+    <script src="./swiper.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css"
-    />
+      href="./swiper.min.css"/>
+    <link rel="stylesheet" href="./main.css" />
     <style type="text/css">
       .icon {
         width: 1em;
@@ -21,6 +21,9 @@
         overflow: hidden;
       }
     </style>
+    <style>
+       
+      </style>
     <title>ycy的个人简历</title>
   </head>
 
@@ -75,15 +78,6 @@
       <div class="mask"></div>
     </div>
     <main>
-      <style>
-        .swiper-container {
-          width: 600px;
-          height: 300px;
-        }
-        .swiper-slide {
-          background: white;
-        }
-      </style>
       <div data-x id="siteAbout" class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
@@ -149,7 +143,7 @@
             HTML 5 &amp; CSS 3
           </h3>
           <div class="progressBar">
-            <div class="progress"></div>
+            <div class="progress" style="width:65%"></div>
           </div>
         </li>
         <li>
@@ -157,7 +151,7 @@
             JavaScript
           </h3>
           <div class="progressBar">
-            <div class="progress" style="width:65%"></div>
+            <div class="progress"></div>
           </div>
         </li>
         <li>
@@ -196,58 +190,24 @@
     </section>
     <section data-x id="siteWorks" class="portfolio">
       <h2>作品集</h2>
-      <nav>
-        <ol class="clearfix">
-          <li id="portfolio1">所有</li>
-          <li id="portfolio2">框架</li>
-          <li id="portfolio3">原生JS&amp;CSS</li>
-        </ol>
-        <div id="portfolioBar" class="bar state-1">
-          <div class="bar-inner"></div>
-        </div>
-        <script>
-          portfolio1.onclick = function() {
-            portfolioBar.className = "bar state-1"
-          }
-          portfolio2.onclick = function() {
-            portfolioBar.className = "bar state-2"
-          }
-          portfolio3.onclick = function() {
-            portfolioBar.className = "bar state-3"
-          }
-        </script>
-      </nav>
-
       <!-- Slider main container -->
       <div class="swiper-container">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          ...
+          <img src="img\navgation2.jpg" class="swiper-slide">
+          <img src="img\drawing-board2.jpg" class="swiper-slide">
+          <img src="img\slide.jpg" class="swiper-slide">
+          
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
         <!-- If we need scrollbar -->
       </div>
-      <div class="works" style="height: 597px;">
-        <div class="big" style="top:0; left: 0;">
-          <img src="./img/1.jpg" alt="作品1" />
-        </div>
-        <div class="small" style="top:0; left: 645px;">
-          <img src="./img/2.jpg" alt="作品2" />
-        </div>
-        <div class="small" style="top:312px; left: 645px;">
-          <img src="./img/3.jpg" alt="作品3" />
-        </div>
-      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </section>
     <script>
       var mySwiper = new Swiper(".swiper-container", {
