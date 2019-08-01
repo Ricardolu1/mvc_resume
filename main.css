@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #efefef;
+  margin: 0px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #dedede;
+}
+h1 {
+  font-family: kai;
+  font-weight: normal;
+}
+body > main {
+  margin-top: -340px;
+}
+ol,ul {
+  list-style: none;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+[data-x].offSet{
+  transform: translateY(100px)
+}
+
+[data-x]{
+  transform: translateY(0);
+  transition: all 0.5s
+
+}
+
+.topNavBar {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  transition: all 1s;
+  color: #b7b7b7;
+}
+.topNavBar.sticky{
+  background:white;
+  padding: 10px 0;
+  z-index: 1;
+  box-shadow: 0 0 10px  rgba(0,0,0,0.3);
+  color: #3d4454;
+  
+}
+.topNavBar-inner {
+  padding: 0 16px;
+}
+.topNavBar nav {
+  padding-top: 6px;
+  padding-bottom: 2px;
+}
+.topNavBar nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topNavBar nav > ul > li {
+  float: left;
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative;
+}
+.topNavBar nav > ul > li > a {
+  font-size: 12px;
+  color: inherit;
+  font-weight: bold;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+  position: relative;
+}
+.topNavBar nav > ul > li.highLight > a::after{
+  content:'';
+  display: block;
+  position: absolute;
+  top:100%;
+  left:0;
+  width: 100%;
+  background: #0a5598;
+  height: 3px;
+  animation: menuSlide 0.3s;
+}
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li > a:hover::after{
+  content:'';
+  display: block;
+  position: absolute;
+  top:100%;
+  left:0;
+  width: 100%;
+  background: #0a5598;
+  height: 3px;
+  animation: menuSlide 0.3s;
+}
+@keyframes menuSlide{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+.topNavBar .submenu{
+  display: none;
+  position: absolute;
+  right: 0;
+  top:100%;
+  background: white;
+  color:#3d4451;
+  box-shadow: 0 0 2px  rgba(0,0,0,0.25);
+  padding:5px 15px;
+}
+.topNavBar li.active .submenu{
+  display: block;
+  animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide{
+  0%{
+    margin-right: 100%;
+  }
+  100%{
+    margin-right: 0%;
+  }
+}
+
+.topNavBar .submenu>li{
+  white-space: nowrap;
+  padding:5px 0;  /*建议可以调一下鼠标样式，调小一点*/
+}
+.topNavBar .logo {
+  font-size: 24px;
+  font-family: "Arial black";
+  padding-top: 3px;
+  padding-bottom: 3.4px;
+}
+.topNavBar .logo .rs {
+  margin-right: 4px;
+  color: #0a5598;
+}
+.topNavBar .logo .card {
+  margin-right: 4px;
+  color: #9a9da2;
+}
+.banner {
+  height: 515px;
+  background-image: url(./img/rs-cover.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.banner .mask {
+  height: 515px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.userCard {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.userCard .welcome {
+  background: #0a5598;
+  color: white;
+  display: inline-block;
+  padding: 4px 16px;
+  line-height: 22px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.userCard .welcome .triangle {
+  display: block;
+  border: 10px solid transparent;
+  height: 0px;
+  width: 0px;
+  border-left-color: #0a5598;
+  border-top-width: 0px;
+  position: absolute;
+  left: 4px;
+  top: 100%;
+}
+.userCard .picture {
+  float: left;
+}
+.userCard .text {
+  float: left;
+  margin-left: 100px;
+  width: 470px;
+}
+.userCard .text hr {
+  margin: 20px 0;
+}
+.userCard .text h1 {
+  margin-top: 18px;
+}
+.userCard .pictureAndText {
+  padding: 50px;
+}
+.userCard dl dt,
+.userCard dl dd {
+  float: left;
+  padding: 10px 0;
+}
+.userCard dl dt {
+  width: 30%;
+  font-weight: bold;
+}
+.userCard dl dd {
+  width: 70%;
+  color: #9da0a7;
+}
+.userCard > footer.media {
+  background: #0a5598;
+  text-align: center;
+}
+.userCard > footer.media > a {
+  display: inline-block;
+  width: 20px;
+  line-height: 20px;
+  padding: 5px 5px;
+  border-radius: 50%;
+  margin: 20px 40px;
+}
+.userCard > footer.media > a:hover {
+  background: #224c72;
+}
+.userCard svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  vertical-align: top;
+}
+body > main .downloadResume {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 21px 55px;
+  border: 1px solid #cdcfd1;
+  display: inline-block;
+  background: #efefef;
+  border-radius: 2px;
+  color: #3d4451;
+  font-weight: bold;
+  margin: 32px 0;
+  transition: box-shadow 0.4s;
+}
+body > main .downloadResume-wrapper {
+  text-align: center;
+}
+body > main .downloadResume:hover {
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+.selfIntroduction {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: kai;
+  line-height: 1.8;
+  font-size: 18px;
+}
+section.skills,
+section.portfolio {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+section.skills > h2,
+section.portfolio > h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+section.skills > ol {
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  background: white;
+  padding: 42px 50px 10px;
+  margin-top: 30px;
+}
+section.skills > ol > li {
+  float: left;
+  width: 47%;
+}
+section.skills > ol > li:nth-child(even) {
+  float: right;
+}
+section.skills > h3 {
+  font-size: 14px;
+  line-height: 1.1;
+  padding-right: 40px;
+}
+section.skills .progressBar {
+  height: 5px;
+  background: #a7d0f5;
+  border-radius: 3px;
+  margin: 4px 0 40px;
+  overflow: hidden;
+}
+
+section.skills .progressBar .progress {
+  height: 100%;
+  background: #0a5598;
+  width: 70%;
+  border-radius: 3px;
+  transform: translateX(0);
+  transition: all 1s;
+
+}
+section.skills.offSet .progress{
+  transform: translateX(-100%);
+}
+
+section.portfolio > nav > ol > li {
+  float: left;
+  margin-left: 40px;
+  cursor: pointer;
+}
+section.portfolio > nav > ol {
+  display: inline-block;
+  vertical-align: top;
+}
+section.portfolio > nav {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 32px;
+}
+section.portfolio > nav > ol > li:nth-child(1) {
+  margin-left: 0;
+}
+section.portfolio > nav > .bar {
+  background: white;
+  height: 5px;
+  margin-top: 5px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+section.portfolio {
+  text-align: center;
+}
+section.portfolio > nav > .bar .bar-inner {
+  height: 100%;
+  background: #0a5598;
+  width: 10%;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+section.portfolio > nav > .bar.state-1 .bar-inner {
+  margin-left: 0;
+  width: 50px;
+}
+section.portfolio > nav > .bar.state-2 .bar-inner {
+  margin-left: 65px;
+  width: 50px;
+}
+section.portfolio > nav > .bar.state-3 .bar-inner {
+  margin-left: 140px;
+  width: 96px;
+}
+section.portfolio .works {
+  position: relative;
+  margin-bottom: 100px;
+  line-height: 0;
+}
+
+section.portfolio .works .big,
+section.portfolio .works .small {
+  position: absolute;
+}
+section.portfolio .works .big:hover,
+section.portfolio .works .small:hover {
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;/*过渡*/
+}
