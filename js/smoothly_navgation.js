@@ -6,8 +6,8 @@
   }
   
   requestAnimationFrame(animate)
-  
-  let aTags = document.querySelectorAll("nav.menu > ul > li > a")
+  var view = document.querySelectorAll("nav.menu")
+  let aTags = view.querySelectorAll("nav.menu > ul > li > a")
   for (let i = 0; i < aTags.length; i++) {
     aTags[i].onclick = function(x) {
       x.preventDefault()
@@ -36,4 +36,4 @@
   }
   
   //下面的代码是引入了一个库，tween来实现动画效果
-}()
+}.call()
