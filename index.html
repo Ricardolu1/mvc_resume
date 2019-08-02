@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-   
-    <script src="//at.alicdn.com/t/font_1261257_ewtw0vajrn.js"></script>
-    <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
-    <script src="./swiper.min.js"></script>
     <link
       rel="stylesheet"
       href="./swiper.min.css"/>
     <link rel="stylesheet" href="./main.css" />
+    <script src="//at.alicdn.com/t/font_1261257_ewtw0vajrn.js"></script>
+    <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
+    <script src="./swiper.min.js"></script>
     <title>ycy的个人简历</title>
   </head>
 
@@ -203,25 +202,10 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
     </section>
-    <script>
-      var mySwiper = new Swiper(".swiper-container", {
-        // Optional parameters
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination"
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-
-        // And if we need scrollbar
-      })
-    </script>
+    <!--这就叫做模块化-->
+    <script src="./js/init_swiper.js"></script>
+    <script src="./js/auto_slide_up.js"></script>
+    <script src="./js/smoothly_navgation.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
