@@ -34,12 +34,12 @@ h1,h2,h3,h4,h5,h6 {
   clear: both;
 }
 [data-x].offSet{
-  transform: translateY(200px)
+  transform: translateY(250px)
 }
 
 [data-x]{
   transform: translateY(0);
-  transition: all 1s
+  transition: all 0.7s
 
 }
 .icon {
