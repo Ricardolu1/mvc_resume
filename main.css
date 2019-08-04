@@ -371,7 +371,7 @@ section.portfolio > nav > .bar {
 }
 section.portfolio {
   text-align: center;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
   position: relative;
   max-width: 840px;
 }
@@ -407,6 +407,12 @@ section.portfolio .swiper-button-next{
   margin-top:0px;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
-.swiper-wrapper {
+
+/* .swiper-wrapper {
   display: flex;
+} */
+
+#postMessage{
+  width: 700px;
+  margin:50px auto;
 }
