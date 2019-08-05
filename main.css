@@ -294,10 +294,18 @@ section.portfolio {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 120px;
+  margin-top: 130px;
 }
 section.skills > h2,
 section.portfolio > h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+section.message>h2{
   text-align: center;
   color: #3d4451;
   font-size: 34px;
@@ -371,7 +379,7 @@ section.portfolio > nav > .bar {
 }
 section.portfolio {
   text-align: center;
-  margin-bottom: 200px;
+  margin-bottom: 130px;
   position: relative;
   max-width: 840px;
 }
@@ -413,6 +421,17 @@ section.portfolio .swiper-button-next{
 } */
 
 #postMessageForm{
-  width: 700px;
+  width: 436px;
   margin:50px auto;
+}
+
+section.message>ol{
+  max-width: 819px;
+  margin:0 auto;
+  border-top: 1px solid #ddd;
+}
+section.message>ol>li{
+  padding: 16px ;
+  border-bottom: 1px solid #ddd;
+
 }

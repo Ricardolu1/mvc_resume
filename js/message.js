@@ -1,41 +1,106 @@
-var APP_ID = "fjlraHVDQ4tHK3Fzksbac1Bo-gzGzoHsz"
-var APP_KEY = "a3RTalL5U6LzNcjedHee9KFL"
+!function() {
+  var view = document.querySelector("section.message")
+  
+  var model={
+    //获取数据
+    fetch:function() {
+      var query = new AV.Query("Message")
+      return query.find() //Promise对象
+    },
+    //创建数据
+    sava:function() {
+      var Message = AV.Object.extend("Message")
+      var message = new Message()
+      return message.save({ //Promise对象
+          'name': name,
+          'content': content
+        })
+    }
+  },
 
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-})
-
-var query = new AV.Query('Message');
-query.find().then(function (messages) {
-  let array =messages.map((item)=>item.attributes)
-  array.forEach((item)=>{
-    let li = document.createElement('li')
-    li.innerText=item.content
-    let messageList=document.querySelector('#messageList')
-    messageList.appendChild(li)
-  })
-  },function(error) {
-    alert('提交失败，请改天来留言')
+  var controller = {
+    view: null,
+    messageList: null,
+    init: function(view) {
+      this.view = view
+      this.messageList = view.querySelector("#messageList")
+      this.form = view.querySelector("form")
+      this.initAV()
+      this.loadMessages()
+      this.bindEvents()
+    },
+    initAV: function() {
+      var APP_ID = "fjlraHVDQ4tHK3Fzksbac1Bo-gzGzoHsz"
+      var APP_KEY = "a3RTalL5U6LzNcjedHee9KFL"
+      AV.init({ appId: APP_ID, appKey: APP_KEY })
+    },
+    loadMessages: function() {
+      model.fetch().then(
+        (messages) => {
+          let array = messages.map(item => item.attributes)
+          array.forEach(item => {
+            let li = document.createElement("li")
+            li.innerText = `${item.name}: ${item.content}`
+            let messageList = document.querySelector("#messageList")
+            this.messageList.appendChild(li)
+          })
+        })
+        .then(
+          function() {},
+          function(error) {
+            console.log(error)
+          }
+        ) //这里的错误信息是会被吞掉的，可以再then的第二个函数打印出来error信息
+    },
+    bindEvents: function() {
+      this.form.addEventListener("submit", function(e) {
+        e.preventDefault()
+        this.savaMessage()
+      })
+    },
+    savaMessage: function() {
+      let myForm = this.form
+      let content = myForm.querySelector("input[name=content]").value //方括号表示属性,这就是用户输入的content
+      let name = myForm.querySelector("input[name=name]").value
+      model.sava(name, content)
+      var Message = AV.Object.extend("Message")
+      var message = new Message()
+      message
+        .save({
+          'name': name,
+          'content': content
+        })
+        .then(function(object) {
+          let li = document.createElement("li")
+          li.innerText = `${object.attributes.name}: ${
+            object.attributescontent
+          }`
+          let messageList = document.querySelector("#messageList")
+          messageList.appendChild(li)
+          content = myForm.querySelector("input[name=content]").value = ""
+          console.log(object)
+        })
+    },
   }
-)//这里的错误信息是会被吞掉的，可以再then的第二个函数打印出来error信息
+  controller.init(view)
+}.call()
 
 
-let myForm = document.querySelector("#postMessageForm")
-myForm.addEventListener("submit", function(e) {
-  e.preventDefault()
-  let content = myForm.querySelector('input[name=content]').value //方括号表示属性,这就是用户输入的content
-  var Message = AV.Object.extend('Message');
-  var message =new Message
-  message.save({
-    'content':content
-  }).then(function (object) {
-    window.location.reload() //我们来帮用户刷新
-    alert('存入成功')
-    console.log(object)
-  })
-})
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//bindEvents除了绑定时间以外，其他事情它不应该做
 
 // //创建TestObject表
 // var X = AV.Object.extend('Frank2');
