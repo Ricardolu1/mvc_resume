@@ -13,7 +13,7 @@
       return query.find() //Promise对象
     },
     //创建数据
-    sava:function() {
+    save:function(name,content) {
       var Message = AV.Object.extend("Message")
       var message = new Message()
       return message.save({ //Promise对象
@@ -57,17 +57,18 @@
     },
 
     bindEvents: function() {
-      this.form.addEventListener("submit", function(e) {
+      this.form.addEventListener("submit",(e) =>{
         e.preventDefault()
-        this.savaMessage()
+        this.saveMessage()
       })
     },
 
-    savaMessage: function() {
+    saveMessage: function() {
       let myForm = this.form
-      let content = myForm.querySelector("input[name=content]").value //方括号表示属性,这就是用户输入的content
+      let content = myForm.querySelector("input[name=content]").value
+      console.log(content) //方括号表示属性,这就是用户输入的content
       let name = myForm.querySelector("input[name=name]").value
-      this.model.sava(name, content).then(function(object) {
+      this.model.save(name, content).then(function(object) {
           let li = document.createElement("li")
           li.innerText = `${object.attributes.name}: ${ object.attributes.content}`
           let messageList = document.querySelector("#messageList")
