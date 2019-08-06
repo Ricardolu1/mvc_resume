@@ -1,27 +1,7 @@
 !function() {
   var view = View("section.message")
   //model是干嘛的呢，只要跟数据有关的都需要用model
-  var model={
-    init: function() {
-      var APP_ID = "fjlraHVDQ4tHK3Fzksbac1Bo-gzGzoHsz"
-      var APP_KEY = "a3RTalL5U6LzNcjedHee9KFL"
-      AV.init({ appId: APP_ID, appKey: APP_KEY })
-    },
-    //获取数据
-    fetch:function() {
-      var query = new AV.Query("Message")
-      return query.find() //Promise对象
-    },
-    //创建数据
-    save:function(name,content) {
-      var Message = AV.Object.extend("Message")
-      var message = new Message()
-      return message.save({ //Promise对象
-          'name': name,
-          'content': content
-      })
-    }
-  }
+  var model=Model({resourceName:'Message'})
 
   var controller = {
     view: null,
@@ -68,7 +48,7 @@
       let content = myForm.querySelector("input[name=content]").value
       console.log(content) //方括号表示属性,这就是用户输入的content
       let name = myForm.querySelector("input[name=name]").value
-      this.model.save(name, content).then(function(object) {
+      this.model.save({'name':name, 'content':content}).then(function(object) {
           let li = document.createElement("li")
           li.innerText = `${object.attributes.name}: ${ object.attributes.content}`
           let messageList = document.querySelector("#messageList")
