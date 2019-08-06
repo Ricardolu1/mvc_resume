@@ -1,5 +1,5 @@
 !function() {
-  var view = document.querySelector("section.message")
+  var view = View("section.message")
   //model是干嘛的呢，只要跟数据有关的都需要用model
   var model={
     init: function() {

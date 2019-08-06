@@ -1,5 +1,5 @@
 !function() {
-  var view =document.querySelector('#topNavBar')
+  var view =View('#topNavBar')
   var controller={
     view:null,
     init:function(view) {
@@ -8,7 +8,7 @@
     },
     bindEvents:function() {
       var view=this.view
-      window.addEventListener('scroll',function() {
+      window.addEventListener('scroll',()=> {
         if (window.scrollY > 0) {
           this.active()
         } else {
