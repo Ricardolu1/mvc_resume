@@ -9,14 +9,21 @@
     bindEvents:function() {
       var view=this.view
       window.addEventListener('scroll',function() {
-        if (scrollY > 0) {
-          topNavBar.classList.add("sticky")
+        if (window.scrollY > 0) {
+          this.active()
         } else {
-          topNavBar.classList.remove("sticky")
+          this.deavtive()
         }
       })
       //箭头函数没有this
     },
+    active:function() {
+      this.view.classList.add('sticky')
+    },
+    deavtive:function() {
+      this.view.classList.remove('sticky')
+    }
+
   }
   controller.init(view)
 }.call()
