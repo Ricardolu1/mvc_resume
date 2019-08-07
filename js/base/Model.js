@@ -1,4 +1,10 @@
 //var model=Model({resourceName:'Message'})上面是这个文件的调用方法，下面是这个文件的写法
+/*
+var model =Model({
+  resourceName:'表名'
+})
+
+*/
 window.Model=function(options) {
   let resourceName =options.resourceName
   return {
