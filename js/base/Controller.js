@@ -9,7 +9,7 @@ Controller({
 })
 */
 window.Controller=function(options) {
-  var init=options.init
+  var initOp=options.init
   let object={
     view:null,
     model:null,
@@ -17,7 +17,7 @@ window.Controller=function(options) {
       this.view=view
       this.model=model
       this.model.init() 
-      init.call(this,view,model)
+      initOp.call(this,view,model)
       this.bindEvents.call(this)
     },
   }
